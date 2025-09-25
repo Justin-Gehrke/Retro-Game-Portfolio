@@ -1,0 +1,200 @@
+/* global.css */
+.appFrame {
+  margin: 0 16%;
+  width: 68%;
+  min-height: 100vh;
+  display: block;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;        /* <- Wichtig: Referenz für absolut positionierte Kinder */
+  overflow: visible;         /* damit Deko-Rahmen nicht abgeschnitten werden */
+
+
+  display: block;
+}
+
+
+hr {
+  width: 100%;
+}
+
+
+
+/* Linke Spalte stapelt Inhalte vertikal */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+/* Gruppierung: Avatar + AboutMe (nebeneinander auf großen Bildschirmen) */
+.avatarAbout {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: flex-start;
+  width: 100%;              /* damit die Gruppe den verfügbaren Spaltenraum nutzt */
+}
+
+/* Avatar soll seine natürliche Breite behalten */
+.avatarWrap {
+  display: inline-block;
+  width: auto;
+  flex: 0 0 auto;           /* nicht wachsen */
+}
+
+/* AboutMe soll den restlichen Platz einnehmen */
+.aboutWrap {
+  display: block;
+  flex: 1 1 auto;           /* AboutMe füllt den verbleibenden Platz */
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+/* ShInfAboutMe + Education unter dem Avatar/Gruppe, schrumpfen auf längsten Inhalt */
+.below {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: max-content;      /* passt sich dem längsten Kind-Inhalt an */
+  max-width: 100%;         /* schützt vor Überschreiten auf engen Bildschirmen */
+  box-sizing: border-box;
+  align-self: start;       /* linksbündig unter der linken Spalte */
+
+}
+
+/* Hauptreihe unter Avatar+About: links .below, rechts .contentContainer */
+.mainRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* .below bleibt shrink-to-content (wie gewünschte schmale Liste) */
+.mainRow .below {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: max-content;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+
+
+
+
+
+.skillsWrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  container-type: inline-size;   
+}
+
+
+
+/* Masonry: standardmäßig 2 Spalten */
+.skillsMasonry {
+  column-count: 2;
+  column-gap: 2rem;              /* Lücke zwischen Spalten */
+}
+
+
+
+
+@container (min-width: 1200px) { 
+  .skillsMasonry {
+    column-count: 3;
+  }
+}
+
+
+
+/* Jede Skills-Box als „Kachel“, darf nicht auf Spalten aufgeteilt werden */
+.skillsMasonry .rpgui-container.framed-grey {
+  display: inline-block;          /* wichtig für columns */
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid; /* Safari */
+  margin: 0 0 2rem;
+}
+
+
+/* Mobile Anpassungen */
+@media (max-width: 1080px) {
+  .appFrame {
+    margin: 0;           /* kein Rand */
+    width: 100%;         /* volle Breite */
+    padding: 8px;        /* optional: kleineres Padding */
+  }
+  .layout { grid-template-columns: 1fr; }
+  .aboutMe { min-width: auto; }
+
+  /* Auf kleinen Bildschirmen untereinander: AboutMe unter Avatar */
+  .avatarAbout {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    width: auto;
+  }
+  .aboutWrap {
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .below {
+    width: auto;
+    align-items: center;
+  
+  }
+  .mainRow {
+    flex-direction: column;
+    gap: 0.75em;
+  }
+  .mainRow .below {
+    width: auto;
+    align-items: center;
+  }
+  .skillsMasonry {
+    column-count: 1;    /* eine Spalte auf kleinen Bildschirmen */
+    width: 100%;
+  }
+  .skillsWrap {
+    width: 100%;  
+ }
+}
+
+.projectsWrap {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.projectsMasonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+
+@media (max-width: 1350px) {
+  .projectsMasonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsMasonry {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+

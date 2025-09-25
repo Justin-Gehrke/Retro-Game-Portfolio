@@ -1,0 +1,89 @@
+.skillbar{
+    margin: 0 3rem 2.5rem;
+}
+
+
+.skillCon {
+  position: static;
+  width: 100%;
+  max-width: none;   /* wichtig für columns */
+  min-width: 0;      /* wichtig für columns */
+  margin: 0;
+  height: auto;
+  overflow: hidden;
+}    
+
+
+.image{
+  max-width: 4em;
+  max-height: 4em;
+  
+}
+.label{
+  font-size: 2rem;
+}
+
+.skillCon .skillcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+.entryLabel{
+  min-width: 8rem;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+
+/* einzelne Skill-Zeile */
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;/* horizontal zentriert */
+
+}
+.itemRow:last-child {
+  margin-bottom: 1rem;
+}
+
+
+
+/* Zahlen in den Kanten mittig ausrichten */
+:global(.rpgui-progress-left-edge),
+:global(.rpgui-progress-right-edge) {
+  display: flex;
+  align-items: center;    /* vertikal zentriert */
+  justify-content: center;/* horizontal zentriert */
+  margin: 0;
+}
+
+
+p {
+  
+  margin: 0;
+  padding: 0;
+}
+
+.Test{
+  display: flex;
+  align-items: center;    /* vertikal zentriert */
+  justify-content: center;/* horizontal zentriert */
+  margin: 0;
+  z-index: 1;
+}
+
+@media (max-width: 1080px) {
+  .skillCon {
+    min-width: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+  .skillCon .skillcontent {
+    margin-left: 0;
+    text-align: center;
+  }
+}

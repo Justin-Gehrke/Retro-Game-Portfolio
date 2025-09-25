@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Max Mustermann",
+    "age": 20,
+    "profession": "Student",
+    "email": "max.mustermann@example.com",
+    "location": "Berlin, Deutschland"
+  }
+]

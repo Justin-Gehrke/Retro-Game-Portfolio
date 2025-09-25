@@ -1,0 +1,27 @@
+/* Container: nur so groß wie der Inhalt, nicht gestreckt */
+:global(.rpgui-container.framed-golden).avatar {
+  display: inline-block !important;
+  width: auto !important;        /* Container nimmt die Bildbreite an */
+  padding: 0 !important;
+}
+
+/* alle prozent-breiten & vb-einheiten weg */
+.avatar {
+  position: static;
+  margin: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Bild begrenzen (entscheidet über die sichtbare Größe) */
+.media {
+  display: block;
+  width: auto;                  /* nicht auf 100% strecken */
+  max-width: 25em;             /* <- DEINE gewünschte Obergrenze */
+  height: auto;                 /* Seitenverhältnis erhalten */
+}
+
+/* optional: auf sehr kleinen Screens etwas kleiner */
+@media (max-width: 600px) {
+  .media { max-width: 10em; }
+}
