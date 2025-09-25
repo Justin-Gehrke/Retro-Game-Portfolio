@@ -1,0 +1,34 @@
+:global(.rpgui-container.framed-golden).about {
+  position: static !important;
+  display: block;
+  padding: 12px;              /* oder 0, je nach Geschmack */
+}
+
+/* rechts neben Avatar den Rest nehmen */
+.about {
+  flex: 1;                    /* füllt die verbleibende Breite in .row */
+  min-width: 260px;           /* bricht bei schmalen Screens sauber um */
+
+}
+.about p {
+  max-width: 100%;   /* ch = Breite eines Zeichens */
+  margin: 0 auto;    /* zentriert im Block */
+  line-height: 1.8;   /* lockerer Textfluss */
+  font-size: 0.8rem;    /* oder leicht größer */
+  text-align:left;
+
+
+}
+
+.about h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* ---------- Mobile: kompakter & vollbreit ---------- */
+@media (max-width: 768px) {
+  .about p {
+    max-width: none;      /* volle Kartenbreite nutzen */
+    font-size: 0.7rem;   /* minimal größer, aber */
+    line-height: 1.6;     /* engerer Zeilenabstand */
+  }
+}

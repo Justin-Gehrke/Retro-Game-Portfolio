@@ -1,0 +1,26 @@
+[
+  {
+    "institution": "Technische Hochschule Musterstadt",
+    "degree": "Bachelor of Science",
+    "field": "Informatik",
+    "startYear": 2020,
+    "endYear": null,
+    "description": "Seit 10/2020 – aktuell noch im Studium"
+  },
+  {
+    "institution": "Berufskolleg für Wirtschaft und Technik Beispielhausen",
+    "degree": "Staatlich geprüfter Informationstechnischer Assistent",
+    "field": "Fachhochschulreife",
+    "startYear": 2017,
+    "endYear": 2020,
+    "description": "Abschluss 07/2020"
+  },
+  {
+    "institution": "Städtische Gesamtschule Am Beispielpark",
+    "degree": "Mittlere Reife",
+    "field": "",
+    "startYear": 2013,
+    "endYear": 2017,
+    "description": "Abschluss 06/2017"
+  }
+]

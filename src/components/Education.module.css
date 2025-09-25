@@ -1,0 +1,56 @@
+.edu {
+  position: static;
+  margin: 0 ;
+  height: auto;
+  overflow: hidden;
+  max-width: 30em;
+  min-width: 30em;
+  letter-spacing: 0;
+}    
+
+.edu .infoBlock {
+  margin-bottom: 0.9em; /* Abstand zwischen den Informationsblöcken */
+}
+
+.edu .title {
+  font-size: 1em; /* Größere Schrift für den Titel */
+  font-weight: bold;
+  margin-bottom: 0.4em; /* Abstand zum Inhalt */
+  text-align: left;
+  margin-left: 0.6em;
+  
+}
+
+.edu .infcontent {
+    font-size: 0.8em;     /* kleinere Schriftgröße */
+    color: rgba(255, 255, 255, 0.9); /* Blassere weiße Schrift (60% Deckkraft) */
+    margin-left: 0.6em;
+    margin-bottom: 0em;
+}
+
+.edu .description {
+    font-size: 0.7em;     /* kleinere Schriftgröße */
+    color: rgba(255, 255, 255, 0.8); /* Blassere weiße Schrift (60% Deckkraft) */
+    margin-left: 0.6em;
+    margin-bottom: 0;
+}
+@media (max-width: 1080px) {
+  .edu {
+    min-width: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+  .edu .title {
+    margin-left: 0;
+    text-align: center;
+  }
+  .edu .infcontent {
+    margin-left: 0;
+    text-align: center;
+  }
+  .edu .description {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,12 @@
+:root {
+  --retro-bg: #1b1b1b;
+  --retro-fg: #f4f4f4;
+}
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--retro-bg);
+  color: var(--retro-fg);
+  font-family: "Press Start 2P", "VT323", system-ui, sans-serif;
+  letter-spacing: 0.5px;
+}
