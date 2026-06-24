@@ -3,8 +3,8 @@
   margin: 0 ;
   height: auto;
   overflow: hidden;
-  max-width: 30em;
-  min-width: 30em;
+  width: 100%;
+  
   letter-spacing: 0;
 }    
 

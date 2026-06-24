@@ -21,7 +21,18 @@
   height: auto;                 /* Seitenverhältnis erhalten */
 }
 
+.name {
+  font-size: 1.2rem !important; /* Größere Schrift für den Namen */
+  margin-top: 0.5em; /* Abstand zum Bild */
+  text-align: center;
+}
+
 /* optional: auf sehr kleinen Screens etwas kleiner */
 @media (max-width: 600px) {
   .media { max-width: 10em; }
+  .name { font-size: 0.9rem !important ; }
+}
+
+@media (max-width: 1080px) {
+  .name {margin-bottom: 0.5em;}
 }

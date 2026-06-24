@@ -1,0 +1,56 @@
+
+.skillsWrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  container-type: inline-size; 
+  margin-top: 2rem;
+ 
+}
+
+
+
+/* Masonry: standardmäßig 2 Spalten */
+.skillsMasonry {
+  column-count: 2;
+  column-gap: 2rem;
+ 
+        
+}
+
+
+
+
+@container (min-width: 1200px) { 
+  .skillsMasonry {
+    column-count: 3;
+  }
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 1080px) {
+ 
+  .skillsMasonry {
+    column-count: 2;    /* eine Spalte auf kleinen Bildschirmen */
+    width: 100%;
+  }
+  .skillsWrap {
+    width: 100%;  
+ }
+
+
+}
+@media (max-width: 700px) {
+
+  .skillsMasonry {
+    column-count: 1;    /* eine Spalte auf kleinen Bildschirmen */
+    width: 100%;
+  }
+  .skillsWrap {
+    width: 100%;  
+ }
+  
+}
+
+
+
+

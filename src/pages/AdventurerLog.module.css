@@ -1,0 +1,111 @@
+
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(300px, 2fr) minmax(200px, 1fr);
+  gap: 1.5rem;
+}
+
+.div1 { grid-area: div1; }
+
+.div2 { grid-area: div2; }
+
+
+:global(.rpgui-container.framed).div2 {
+ 
+  border-image-width: 8px;
+  
+  
+}
+
+.adventurerCon {
+  margin: 1rem 0 0 0;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  ;
+}
+
+
+.adventurerCon p {
+  text-align: left;
+  margin-bottom: 1.2rem;
+  text-indent: 1.5rem; /* leichter Buchstil */
+}
+
+.adventurerframe {
+ 
+  margin: 2rem 0;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  
+ 
+}
+
+
+:global(.rpgui-container.framed).adventurerframe {
+  position: relative !important;
+  border-image-width: 8px;
+  background-clip: inherit;
+  
+}
+
+/* Goldener Titel */
+.adventurerTitle {
+  text-align: center;
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  color: #FFD700;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  text-shadow:
+    2px 2px 0 #000,
+    0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+
+.adventurerCon p:first-of-type {
+  font-weight: bold;
+  color: #f5e6c8;
+}
+
+
+.adventurerframe:hover {
+ box-shadow:
+    2px 2px 0 #222,
+    4px 4px 0 #333,
+    6px 6px 0 #444;
+ 
+}
+
+@media (max-width: 1500px) {
+.adventurerframe {
+  margin: 2rem 0;
+
+  }
+  .container {
+    display: block;
+  }
+ 
+}
+
+@media (max-width: 700px) {
+.adventurerCon p {
+  display: block;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  text-indent: 0;
+}
+.adventurerCon{
+  line-height: 1.4;
+}
+
+:global(.rpgui-container.framed).adventurerframe{
+  padding: inherit;
+  border-width: 12px;
+
+}
+
+
+}

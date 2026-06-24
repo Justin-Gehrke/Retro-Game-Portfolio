@@ -1,8 +1,4 @@
-:global(.rpgui-container.framed-golden).about {
-  position: static !important;
-  display: block;
-  padding: 12px;              /* oder 0, je nach Geschmack */
-}
+
 
 /* rechts neben Avatar den Rest nehmen */
 .about {
