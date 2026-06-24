@@ -1,0 +1,57 @@
+.questFrame {
+  position: static;
+  padding: 1.5rem;
+
+}
+
+
+/* Liste */
+.questList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Einzelne Quest */
+.questItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem;
+  transition: 0.2s;
+  
+}
+
+/* Hover Effekt */
+.questItem:hover {
+  
+  box-shadow: 0 0 0 3px #D27D2C;
+
+  transform: scale(1.02);
+  
+}
+
+/* Icon */
+.questIcon {
+  font-size: 1.5rem;
+}
+
+/* Text */
+.questItem strong {
+  color: #ebddc3;
+  font-size: 1.1rem;
+}
+
+.questItem p {
+  margin: 0;
+  font-size: 0.9rem;
+ 
+}
+
+:global(.rpgui-container.framed-golden-2).questItem {
+  position: relative !important;
+  border-image-width: 8px;
+  background-clip: inherit;
+  
+}
+

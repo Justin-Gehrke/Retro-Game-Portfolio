@@ -15,7 +15,7 @@ type ProCards = {
   
 };
 
-export default function Projects({ title,link,description,startDate,endDate,useTech,youPos}: ProCards) {
+export default function ProjectsCards({ title,link,description,startDate,endDate,useTech,youPos}: ProCards) {
 
   return (
    <div className={`rpgui-container framed-grey ${styles.ProCards}`}>

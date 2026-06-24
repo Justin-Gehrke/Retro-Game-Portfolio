@@ -1,9 +1,11 @@
 [
   {
     "name": "Max Mustermann",
-    "age": 20,
-    "profession": "Student",
+    "age": "2006-08-19",
+    "class": "Student",
+    "job_":  "Student der Informatik", 
     "email": "max.mustermann@example.com",
-    "location": "Berlin, Deutschland"
+    "location": "Berlin",
+    "employer":"HTW Berlin"
   }
 ]

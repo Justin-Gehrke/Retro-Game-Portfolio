@@ -1,12 +1,49 @@
 :root {
-  --retro-bg: #1b1b1b;
-  --retro-fg: #f4f4f4;
+  --retro-bgh: #87CEEB;
+  --retro-bgh: linear-gradient(90deg, rgba(135, 206, 235, 1) 0%, rgba(135, 206, 250, 1) 100%);
+  --retro-bgd: #000000;
+  --retro-bgd: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(0, 0, 46) 100%);
+  --rbg: #1f1d1d;
 }
-html, body, #root { height: 100%; }
+html, body, #root 
+{ 
+  height: 100%;
+}
+html {
+  
+}
+
+body {
+ scrollbar-gutter: stable;
+}
 body {
   margin: 0;
-  background: var(--retro-bg);
+  background: var(--retro-bgd);
   color: var(--retro-fg);
   font-family: "Press Start 2P", "VT323", system-ui, sans-serif;
   letter-spacing: 0.5px;
+}
+
+
+@media (max-width: 1080px) {
+  .rpgui-content,
+  .rpgui-content * {
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  .rpgui-content::-webkit-scrollbar,
+  .rpgui-content *::-webkit-scrollbar {
+    width: 0 !important;
+    
+    
+  }
+
+  .rpgui-content::-webkit-scrollbar-button,
+  .rpgui-content *::-webkit-scrollbar-button,
+  .rpgui-content::-webkit-scrollbar-corner,
+  .rpgui-content *::-webkit-scrollbar-corner {
+    
+    width: 0 !important;
+    
+  }
 }

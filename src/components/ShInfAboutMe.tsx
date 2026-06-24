@@ -3,21 +3,48 @@ import  React from "react";
 import styles from "./ShInfAboutMe.module.css";
 import { useEffect, useState } from "react";
 
+
+
+
+
+
 interface ShinfItem {
-  name: string;
-  age: number;
-  profession: string;
+  age: string;
+  class: string;
   email: string;
   location: string;
+  job_: string;
+  employer: string;
 }
 
+function calculateAge(dateString: string): number {
+  const birth = new Date(dateString);
+  const today = new Date();
+
+  let age = today.getFullYear() - birth.getFullYear();
+  const m = today.getMonth() - birth.getMonth();
+
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
+
+
 const FIELDS: { label: string; key: keyof ShinfItem; format?: (v: any) => string }[] = [
-  { label: "Name",     key: "name" },
-  { label: "Alter",    key: "age",        format: (n) => `${n} Jahre` },
-  { label: "Beruf",    key: "profession" },
-  { label: "E-Mail",   key: "email",      format: (e) => String(e) },
-  { label: "Standort", key: "location" },
+  { label: "Level",    key: "age", format: (v) => String(calculateAge(v)) },
+  { label: "Klasse",    key: "class" },
+  { label: "Base Camp", key: "location" },
+  { label: "Job",      key: "job_" },
+  { label: "Direct Ping",   key: "email",      format: (e) => String(e) },
+  {label: "Faction", key: "employer"},
+  
 ];
+
+
+
 
 const Shinf: React.FC = () => {
   const [info, setInfo] = useState<ShinfItem | null>(null);
@@ -34,27 +61,42 @@ const Shinf: React.FC = () => {
 
   if (!info) return null;
 
-  return (
-    <div className={`rpgui-container framed-grey ${styles.siam}`}>
-      {FIELDS.map((f, i) => {
-        const raw = info[f.key];
-        const value = f.format ? f.format(raw) : String(raw ?? "");
-        return (
-          <React.Fragment key={f.key}>
-            <div className={styles.infoBlock}>
-              <h2 className={styles.title}>{f.label}</h2>
-              <p className={styles.infcontent}>
-                {f.key === "email"
-                  ? <a href={`mailto:${value}`}>{value}</a>
-                  : value}
-              </p>
-            </div>
-            {i < FIELDS.length - 1 && <hr />}
-          </React.Fragment>
-        );
-      })}
-    </div>
-  );
+ return (
+ <div className={styles.infoGrid}>
+  {FIELDS.map((f) => {
+    const raw = info[f.key];
+    const value = f.format ? f.format(raw) : String(raw ?? "");
+
+    const isEmail = f.key === "email";
+    const isAge = f.key === "age";
+
+    return (
+      <div key={f.key} className={styles.item}>
+        
+        <div className={styles.label}><p>{f.label}</p></div>
+        <div className={`rpgui-button down ${styles.valueBox}`}>
+          
+         {isAge ? (
+              <>
+                <div className={styles.ageNumber}><p>{value}</p></div>
+              </>
+            ) : isEmail ? (
+              <a href={`mailto:${value}`}><p>{value}</p></a>
+            ) : (
+             <p> {value} </p>
+            )}
+
+
+        </div>
+
+      </div>
+    );
+  })}
+</div>
+
+
+);
+
 };
 
 export default Shinf;

@@ -1,49 +1,82 @@
-.siam {
-  position: static;
-  margin: 0 ;
-  height: auto;
-  overflow: hidden;
-  min-width: 30em;
-  max-width: 30em;
-}    
 
-.siam .infoBlock {
-  margin-bottom: 0.9em; /* Abstand zwischen den Informationsblöcken */
+.infoGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  justify-items: center;
 }
 
-.siam .title {
-  font-size: 1em; /* Größere Schrift für den Titel */
-  font-weight: bold;
-  margin-bottom: 0.4em; /* Abstand zum Inhalt */
-  text-align: left;
-  margin-left: 0.6em;
-  margin-bottom: 0em;
+.item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+/* Überschrift */
+.label{
+ 
+  font-size: 1.2rem;
   
-  
 }
 
-.siam .infcontent {
-    font-size: 0.9em;     /* kleinere Schriftgröße */
-    color: rgba(255, 255, 255, 0.9); /* Blassere weiße Schrift (60% Deckkraft) */
-    margin-left: 0.6em;
-    margin-bottom: 0em;
-}
-.siam .p{
-  margin-bottom: 0em;
+/* RPGUI Box mit Wert */
+/* Schild/Box nicht endlos breit */
+.valueBox{
+  width: 100%;
+  max-width: 370px;       /* <- wichtig, sonst wird alles riesig */
+  min-height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  box-sizing: border-box;
 }
 
+
+
+
+
+
+
+
+/* Lange Texte sauber umbrechen */
+.valueBox a,
+.valueBox{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+ 
+}
+
+
+
+
+/* Responsive: auf kleinen Screens 1 oder 2 Spalten */
 @media (max-width: 1080px) {
-  .siam {
-    min-width: auto;
-    max-width: 100%;
-    text-align: center;
-  }
-  .siam .title {
-    margin-left: 0;
-    text-align: center;
-  }
-  .siam .infcontent {
-    margin-left: 0;
-    text-align: center;
+  
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem ;
+    
+   
   }
 }
+
+@media (max-width: 700px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+  .label {
+    font-size: 1rem;
+  }
+  .valueBox a,
+  .valueBox {
+    font-size: 0.8rem;
+  }
+}
+
